@@ -1,0 +1,408 @@
+/* Defaults */
+*{
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #d9c996;
+  --secondary-color: #343a40;
+  --background-color: #e8e8e8;
+  --text-color: #343a40;
+  --highlight-color: #d9c996;
+  --navbar-bg: white;
+  --navbar-text-color: #343a40;
+  --border-color: #d9c996;
+}
+
+/* Font */
+@font-face {
+  font-family: 'billionDreams';
+  src: url('./Fonts/BillionDreams.ttf') format('truetype');
+}
+/* Resetta i margini e i padding di default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Imposta html e body per occupare tutta la viewport senza margini */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Evita lo scroll orizzontale indesiderato */
+  
+}
+
+/* Evita problemi con Bootstrap container */
+.container, .row {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Se hai problemi con navbar o altre sezioni, assicurati che siano impostate correttamente */
+nav, #section1, #section2, #section3, #section4, #section5, #section6 {
+  width: 100vw; /* Assicura che le sezioni occupino tutta la larghezza */
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color); 
+  -ms-overflow-style: none;  /* Nasconde scrollbar su Internet Explorer e Edge */
+  scrollbar-width: none;  /* Nasconde scrollbar su Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-family: 'billionDreams';
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+h2 {
+  font-family: 'billionDreams';
+  font-size: 3rem;
+  color: var(--secondary-color); 
+}
+
+p {
+  font-size: 1.5rem;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+a {
+  font-size: 1.5rem;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Header Menu */
+.navbar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-bg); 
+  backdrop-filter: blur(10px);
+  padding: 0;
+  z-index: 2;
+}
+
+#logo {
+  margin-left: 15px;
+  width: 60px;
+  height: 60px;
+  margin-top: auto;
+  margin-bottom: auto;
+  filter: invert(1);
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: var(--navbar-text-color); 
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: block;
+  font-size: 1.2rem;
+}
+
+.navbar-links li:hover {
+  scale: 105%;
+}
+
+.navbar-links li a:hover {
+  font-weight: bold;
+  color: var(--highlight-color); 
+}
+
+/* Home background */
+.background-image {
+  background-image: url("./Imgs/tropical_background_1920.jpg");
+  background-size: cover;
+  background-attachment: fixed; /* This makes the background fixed */
+  position: relative; /* Needed for z-index stacking */
+  z-index: 1; /* Set a higher z-index for the background */
+  text-align: center; /* Center the content vertically */
+  color: white; /* Text color on top of the background */
+  display: block;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#section1.background-image {
+  display: flex;
+}
+
+#section3.background-image {
+  min-height: 0px !important;
+}
+
+#section4.background-image {
+  min-height: 0px !important;
+}
+
+.background-image img {
+  max-width: 30%;
+}
+
+/* Sections */
+.story-phones {
+  display: none;
+}
+
+.story-img img {
+  max-width: 60%;
+  margin: 80px;
+}
+
+.story-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.story-text p {
+  margin-right: 120px;
+}
+
+#section2 h1 {
+  margin-bottom: 20px;
+  margin-top: 0px ;
+}
+
+#section3 {
+  text-align: center;
+  background-color: var(--background-color); /* Usa la variabile per lo sfondo */
+}
+
+#section3 h1 {
+  margin-top: 0px;
+  padding-top: 80px;
+}
+
+#section4 {
+  text-align: center;
+  background-color: var( --background-color);
+}
+
+#section4 h1 {
+  margin-top: 0px;
+  padding-top: 80px;
+}
+
+#section5 {
+  text-align: center;
+}
+
+#section5 a {
+  font-size: 1rem;
+}
+
+#section6 {
+  text-align: center;
+}
+
+#footer {
+  height: 300px;
+  background-color: var( --background-color); /* Usa la variabile per lo sfondo */
+}
+
+.container {
+  margin-bottom: 0px !important;
+  padding-bottom: 80px;
+}
+
+.container button{
+  background-color: var(--primary-color);
+  border: none;
+}
+
+#carousel-container {
+  margin: auto;
+  width: 80%;
+  padding: 20px;
+}
+
+/* Cards */
+#cardsContainer {
+  padding-bottom: 0px;
+}
+
+.social-container{
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  height: fit-content;
+  width: 65%;
+  min-width: 410px;
+  max-width: 480px;
+  border-color: var(--border-color); /* Usa la variabile per il colore del bordo */
+  border-radius: 14px;
+  border-width: 1px;
+  margin-bottom: 80px;
+}
+
+.img-placeholder {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(110, 110, 110);
+  width: 120px;
+  height: 120px;
+}
+
+.card p {
+  color: var(--text-color);
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 1.5rem;
+  margin-bottom: 80px;
+}
+
+.card h2 {
+  color: var(--primary-color); /* Usa la variabile per il colore */
+  margin-bottom: 30px;
+}
+
+/* Media Queries */
+@media (max-width: 1280px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 75px;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: .5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  #section1 img {
+    max-width: 60%;
+  }
+  
+  #section2 {
+    height: fit-content;
+  }
+
+  #section2 .row {
+    display: none;
+  }
+
+  .phone-content {
+    margin: 20px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .phone-content h1 {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .story-phones {
+    display: flex;
+    background-image: url('./Imgs/2023-05-12 - darker.jpg');
+    background-size: cover;
+    background-position: center;
+    height: fit-content;
+  }
+
+  #section3 h1 {
+    margin-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  #section6 h1 {
+    margin-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 0px;
+  }
+
+  #section4 h1 {
+    margin-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  #section4 .container {
+    padding: 20px;
+    padding-bottom: 60px;
+  }
+
+  #cardsContainer {
+    padding-bottom: 0px;
+  }
+
+  .card {
+    min-width: 300px;
+    margin-bottom: 80px;
+  }
+
+  .card p {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  #cardsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #cardsContainer .col-12 {
+    flex: 0 0 33%; /* Ogni card occupa 1/3 della riga */
+    max-width: 33%;
+  }
+}

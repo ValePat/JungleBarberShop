@@ -1,3 +1,4 @@
+
 /* Defaults */
 *{
   box-sizing: border-box;
@@ -44,7 +45,7 @@ html, body {
 .screen-container {
   align-items: center;
   max-width: 1660px;
-  margin: auto;
+  padding: 20px;
 }
 /* Se hai problemi con navbar o altre sezioni, assicurati che siano impostate correttamente */
 nav, #section1, #section2, #section3, #section4, #section5, #section6 {
@@ -191,13 +192,17 @@ a {
 }
 
 /* Sections */
+
+#story-screen-container {
+  margin: auto;
+}
+
 .story-phones {
   display: none;
 }
 
 .story-img img {
   max-width: 60%;
-  margin: 80px;
   border-radius: 12px;
   border: 1px solid var(--highlight-color);
 }
@@ -210,7 +215,6 @@ a {
 }
 
 .story-text p {
-  margin-right: 120px;
   font-weight: 500;
 }
 
@@ -247,11 +251,6 @@ a {
 #section6 {
   text-align: center;
   flex-direction: column;
-}
-
-#footer {
-  height: 300px;
-  background-color: var( --text-color); /* Usa la variabile per lo sfondo */
 }
 
 .form-container {
@@ -346,6 +345,33 @@ a {
   color: var(--background-color);
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+#footer {
+  background-color: var( --text-color);
+  color: var(--highlight-color);
+}
+
+#footer p, span{
+  margin: 0;
+}
+
+#footer > div:first-child {
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-icons i{
+font-size: 2rem;
+color: var(--highlight-color)
+}
+
+#scrollToTop {
+  background-color: var(--highlight-color);
+  min-width: 120px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
 }
 
 /* Media Queries */

@@ -38,3 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function scrollToTop() {
+  $("html, body").animate({ scrollTop: 0 }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  let scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+      scrollBtn.addEventListener("click", scrollToTop);
+  }
+});

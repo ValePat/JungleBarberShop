@@ -18,3 +18,20 @@ const navbarLinks = document.getElementsByClassName('navbar-links')[0];
 toggleButton.addEventListener('click', () => {
   navbarLinks.classList.toggle('active')
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+  const showMoreBtn = document.getElementById("showMoreBtn");
+  const cards = document.querySelectorAll("#cardsContainer .card");
+  const section3 = document.getElementById("section3");
+  var isExpanded = false;
+
+  showMoreBtn.addEventListener("click", function () {
+    if (isExpanded === false) {
+      isExpanded = true;
+      cards.forEach((card) => card.classList.add("hidden-card"));
+    } else {
+      isExpanded = false;
+      cards.forEach((card) => card.classList.remove("hidden-card"));
+    }
+  });
+});

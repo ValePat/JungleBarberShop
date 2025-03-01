@@ -41,10 +41,23 @@ html, body {
   max-width: 100%;
 }
 
+.screen-container {
+  align-items: center;
+  max-width: 1660px;
+  margin: auto;
+}
 /* Se hai problemi con navbar o altre sezioni, assicurati che siano impostate correttamente */
 nav, #section1, #section2, #section3, #section4, #section5, #section6 {
   width: 100vw; /* Assicura che le sezioni occupino tutta la larghezza */
 }
+
+#section3, #section4, #section6 {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;  /* Centra verticalmente */
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -57,12 +70,20 @@ body {
   display: none;
 }
 
+#showMoreBtn {
+  display: none;
+  margin-bottom: 80px;
+  width: 50%;
+  margin: auto;
+  max-width: 260px;
+}
+
 h1 {
   font-family: 'billionDreams';
   font-size: 3.5rem;
   color: var(--primary-color);
-  margin-bottom: 80px;
-  margin-top: 80px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 h2 {
@@ -158,14 +179,6 @@ a {
   display: flex;
 }
 
-#section3.background-image {
-  min-height: 0px !important;
-}
-
-#section4.background-image {
-  min-height: 0px !important;
-}
-
 .background-image img {
   max-width: 30%;
 }
@@ -191,29 +204,14 @@ a {
   margin-right: 120px;
 }
 
-#section2 h1 {
-  margin-bottom: 20px;
-  margin-top: 0px ;
-}
-
 #section3 {
   text-align: center;
   background-color: var(--background-color); /* Usa la variabile per lo sfondo */
 }
 
-#section3 h1 {
-  margin-top: 0px;
-  padding-top: 80px;
-}
-
 #section4 {
   text-align: center;
   background-color: var( --background-color);
-}
-
-#section4 h1 {
-  margin-top: 0px;
-  padding-top: 80px;
 }
 
 #section5 {
@@ -226,36 +224,48 @@ a {
 
 #section6 {
   text-align: center;
+  flex-direction: column;
 }
 
 #footer {
   height: 300px;
-  background-color: var( --background-color); /* Usa la variabile per lo sfondo */
+  background-color: var( --text-color); /* Usa la variabile per lo sfondo */
 }
 
-.container {
-  margin-bottom: 0px !important;
-  padding-bottom: 80px;
+.form-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+  margin-bottom: 80px; 
+  width: 100%;
+  margin: auto;
 }
 
-.container button{
+.form-container button{
   background-color: var(--primary-color);
   border: none;
+  width: 50%;
+  margin: auto;
+  margin-top: 60px;
+  max-width: 260px;
 }
 
 #carousel-container {
   margin: auto;
   width: 80%;
-  padding: 20px;
 }
 
 /* Cards */
 #cardsContainer {
+  margin: auto;
   padding-bottom: 0px;
+  width: 100%;
 }
 
 .social-container{
   padding: 20px;
+  margin: auto;
+  width: 100%;
 }
 
 .card {
@@ -270,8 +280,12 @@ a {
   margin-bottom: 80px;
 }
 
+.card button {
+  background-color: var(--primary-color); width: 50%; margin: auto; border: none; margin-bottom: 60px;
+}
+
 .img-placeholder {
-  margin-top: 80px;
+  margin-top: 60px;
   margin-bottom: 60px;
   display: block;
   margin-left: auto;
@@ -286,7 +300,7 @@ a {
   margin-left: 30px;
   margin-right: 30px;
   font-size: 1.5rem;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .card h2 {
@@ -297,7 +311,6 @@ a {
 /* Media Queries */
 @media (max-width: 1280px) {
   .navbar {
-    flex-direction: column;
     align-items: flex-start;
     min-height: 75px;
   }
@@ -326,6 +339,24 @@ a {
 
   .toggle-button {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    margin-right: 12px;
+  }
+
+  .bar {
+    width: 42px;
+    height: 6px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+  }
+
+  .toggle-button .bar:nth-child(2) {
+    /* Stili per il secondo elemento */
+    margin-top: 6px;
+    margin-bottom: 6px;
   }
 
   #section1 img {
@@ -359,24 +390,12 @@ a {
     height: fit-content;
   }
 
-  #section3 h1 {
-    margin-bottom: 30px;
-    padding-top: 30px;
-  }
-
-  #section6 h1 {
-    margin-bottom: 30px;
-    padding-top: 30px;
-    margin-top: 0px;
-  }
-
-  #section4 h1 {
-    margin-bottom: 30px;
-    padding-top: 30px;
+  #section3 {
+    min-height: 100vh;
+    overflow: hidden; /* Previene il collasso dei margini */
   }
 
   #section4 .container {
-    padding: 20px;
     padding-bottom: 60px;
   }
 
@@ -385,8 +404,26 @@ a {
   }
 
   .card {
+    display: none;
+  }
+
+  #cardsContainer .col-12:nth-child(1) .card {
+    display: flex !important;
+}
+  .hidden-card {
+    display: flex !important; /* Mostra le altre quando espanse */
+  }
+
+  #showMoreBtn {
+    display: block;
+    margin-bottom: 80px;
+    width: 50%;
+  }
+
+  .card {
     min-width: 300px;
     margin-bottom: 80px;
+    display: none;
   }
 
   .card p {

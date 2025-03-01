@@ -53,7 +53,6 @@ nav, #section1, #section2, #section3, #section4, #section5, #section6 {
 
 #section3, #section4, #section6 {
   display: flex;
-  min-height: 100vh;
   align-items: center;  /* Centra verticalmente */
 }
 
@@ -82,14 +81,23 @@ h1 {
   font-family: 'billionDreams';
   font-size: 3.5rem;
   color: var(--primary-color);
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 h2 {
-  font-family: 'billionDreams';
-  font-size: 3rem;
-  color: var(--secondary-color); 
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-color); 
+}
+
+h3 {
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: var(--text-color); 
+  font-weight: 800;
+
 }
 
 p {
@@ -122,10 +130,9 @@ a {
 }
 
 #logo {
-  margin-left: 15px;
-  width: 60px;
-  height: 60px;
-  margin-top: auto;
+  margin-left: 20px;
+  width: 75px;
+  margin-top: 24px;
   margin-bottom: auto;
   filter: invert(1);
 }
@@ -191,6 +198,8 @@ a {
 .story-img img {
   max-width: 60%;
   margin: 80px;
+  border-radius: 12px;
+  border: 1px solid var(--highlight-color);
 }
 
 .story-text {
@@ -202,6 +211,7 @@ a {
 
 .story-text p {
   margin-right: 120px;
+  font-weight: 500;
 }
 
 #section3 {
@@ -212,6 +222,18 @@ a {
 #section4 {
   text-align: center;
   background-color: var( --background-color);
+}
+
+#section4 a {
+  margin: 0;
+  font-weight: 600;
+  padding-left: 12px;
+  text-decoration: none;
+  color: var(--background-color);
+}
+
+#section4 a:hover {
+  color: var(--primary-color);
 }
 
 #section5 {
@@ -233,8 +255,6 @@ a {
 }
 
 .form-container {
-  padding-left: 20px;
-  padding-right: 20px;
   padding-bottom: 60px;
   margin-bottom: 80px; 
   width: 100%;
@@ -263,25 +283,44 @@ a {
 }
 
 .social-container{
-  padding: 20px;
   margin: auto;
   width: 100%;
 }
 
 .card {
-  background-color: white;
+  background-color: transparent;
   height: fit-content;
   width: 65%;
-  min-width: 410px;
+  min-width: 380px;
   max-width: 480px;
   border-color: var(--border-color); /* Usa la variabile per il colore del bordo */
   border-radius: 14px;
   border-width: 1px;
   margin-bottom: 80px;
+  min-height: 380px;
+  backdrop-filter: blur(10px);
+  padding: 30px;
 }
 
 .card button {
-  background-color: var(--primary-color); width: 50%; margin: auto; border: none; margin-bottom: 60px;
+  background-color: var(--primary-color); 
+  width: 50%; 
+  margin: auto; 
+  border: none; 
+  margin-bottom: 30px;
+  margin-top: 30px;
+  min-width: 180px;
+}
+
+#contacts-container {
+  text-align: left;
+  font-weight: 500 !important;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;         /* Angoli smussati */
+  border: 1px solid #d9c996;   /* Colore e spessore del bordo */
+  background-color:transparent; /* Colore di sfondo semi-trasparente */
+  padding: 20px;
+  margin-bottom: 60px;
 }
 
 .img-placeholder {
@@ -296,20 +335,30 @@ a {
 }
 
 .card p {
-  color: var(--text-color);
+  color: var(--background-color);
   margin-left: 30px;
   margin-right: 30px;
   font-size: 1.5rem;
-  margin-bottom: 60px;
+  margin: 0px;
 }
 
 .card h2 {
-  color: var(--primary-color); /* Usa la variabile per il colore */
+  color: var(--background-color);
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 /* Media Queries */
 @media (max-width: 1280px) {
+
+  .screen-container{
+    margin: 20px;
+  }
+
+    #story-screen-container {
+      display: none;
+    }
+
   .navbar {
     align-items: flex-start;
     min-height: 75px;
@@ -343,12 +392,14 @@ a {
     align-items: center;
     align-content: center;
     margin: auto;
-    margin-right: 12px;
+    margin-right: 20px;
+    margin-top: 26px;
+
   }
 
   .bar {
-    width: 42px;
-    height: 6px;
+    width: 32px;
+    height: 4px;
     background-color: var(--text-color);
     border-radius: 2px;
   }
@@ -377,9 +428,8 @@ a {
     text-align: center;
   }
 
-  .phone-content h1 {
-    margin-top: 30px !important;
-    margin-bottom: 30px !important;
+  .phone-content p{
+    font-weight: 400;
   }
   
   .story-phones {
@@ -388,7 +438,10 @@ a {
     background-size: cover;
     background-position: center;
     height: fit-content;
+    box-sizing: border-box;
   }
+
+  
 
   #section3 {
     min-height: 100vh;
@@ -416,17 +469,13 @@ a {
 
   #showMoreBtn {
     display: block;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     width: 50%;
   }
 
   .card {
     min-width: 300px;
-    margin-bottom: 80px;
-    display: none;
-  }
-
-  .card p {
+    margin-bottom: 60px;
     display: none;
   }
 }

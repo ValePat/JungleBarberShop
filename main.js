@@ -15,6 +15,7 @@ $(".navbar-links a").click(function (e) {
 //Header menu
 const toggleButton = document.getElementsByClassName('toggle-button')[0];
 const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+
 toggleButton.addEventListener('click', () => {
   navbarLinks.classList.toggle('active')
 })
@@ -29,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isExpanded === false) {
       isExpanded = true;
       cards.forEach((card) => card.classList.add("hidden-card"));
+      showMoreBtn.innerText = "Mostra di meno"
     } else {
       isExpanded = false;
       cards.forEach((card) => card.classList.remove("hidden-card"));
+      showMoreBtn.innerText = "Mostra di più"
     }
   });
 });

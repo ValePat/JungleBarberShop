@@ -45,12 +45,15 @@ html, body {
 .screen-container {
   align-items: center;
   max-width: 1660px;
-  padding: 20px;
+  margin: auto;
 }
 /* Se hai problemi con navbar o altre sezioni, assicurati che siano impostate correttamente */
 nav, #section1, #section2, #section3, #section4, #section5, #section6 {
   width: 100vw; /* Assicura che le sezioni occupino tutta la larghezza */
 }
+
+#section1, #section2, #section3, #section4, #section5, #section6 {
+  min-height: 900px;}
 
 #section3, #section4, #section6 {
   display: flex;
@@ -72,18 +75,17 @@ body {
 
 #showMoreBtn {
   display: none;
-  margin-bottom: 80px;
-  width: 50%;
+  margin-bottom: 30px;
   margin: auto;
-  max-width: 260px;
+  max-width: 280px;
 }
 
 h1 {
   font-family: 'billionDreams';
   font-size: 3.5rem;
   color: var(--primary-color);
-  padding-top: 30px;
   padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 h2 {
@@ -195,10 +197,12 @@ a {
 
 #story-screen-container {
   margin: auto;
+  text-align: center;
 }
 
 .story-phones {
   display: none;
+  height: 100vh;
 }
 
 .story-img img {
@@ -216,6 +220,29 @@ a {
 
 .story-text p {
   font-weight: 500;
+  color: var(--navbar-text-color);
+}
+
+#section1 {
+  height: 100vh;
+}
+
+#section2 h1 {
+}
+
+#section2 {
+ min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  /* background-image: url('./Imgs/2023-05-12 - darker.jpg');
+  background-size: cover;
+  background-position: center; */
+}
+
+#section2 img {
+  max-width: 80%;
+  padding-bottom: 30px;
 }
 
 #section3 {
@@ -251,6 +278,9 @@ a {
 #section6 {
   text-align: center;
   flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  min-height: 600px;
 }
 
 .form-container {
@@ -301,7 +331,7 @@ a {
   padding: 30px;
 }
 
-.card button {
+.card a {
   background-color: var(--primary-color); 
   width: 50%; 
   margin: auto; 
@@ -463,11 +493,16 @@ color: var(--highlight-color)
     background-image: url('./Imgs/2023-05-12 - darker.jpg');
     background-size: cover;
     background-position: center;
-    height: fit-content;
+    height: 100vh;
     box-sizing: border-box;
+    align-items: center;
+    align-content: center;
   }
 
-  
+  #screen-social-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
   #section3 {
     min-height: 100vh;
@@ -495,13 +530,12 @@ color: var(--highlight-color)
 
   #showMoreBtn {
     display: block;
-    margin-bottom: 60px;
-    width: 50%;
+    max-width: 210px;
   }
 
   .card {
     min-width: 300px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     display: none;
   }
 }
@@ -517,4 +551,11 @@ color: var(--highlight-color)
     flex: 0 0 33%; /* Ogni card occupa 1/3 della riga */
     max-width: 33%;
   }
+}
+
+@media (min-width: 3000px) {
+
+  #section2 h1 {
+    padding-bottom: 80px !important;
+}
 }

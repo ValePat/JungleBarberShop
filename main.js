@@ -30,11 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isExpanded === false) {
       isExpanded = true;
       cards.forEach((card) => card.classList.add("hidden-card"));
-      showMoreBtn.innerText = "Mostra di meno"
+      showMoreBtn.innerText = "Mostra di meno";
+      section3.style.paddingTop = "30px";
+      section3.style.paddingBottom = "30px";
     } else {
       isExpanded = false;
       cards.forEach((card) => card.classList.remove("hidden-card"));
-      showMoreBtn.innerText = "Mostra di più"
+      showMoreBtn.innerText = "Mostra di più";
+          section3.style.paddingTop = "0px";
+      section3.style.paddingBottom = "0px";
     }
   });
 });
